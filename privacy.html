@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>隐私政策 — 刻 Kizame</title>
+<meta name="description" content="Kizame（刻）隐私政策：数据仅存本机，不收集账号、不上传照片，逐项说明 Android 权限用途。">
+<meta name="theme-color" content="#F3F1EC">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">跳到主要内容</a>
+
+<div class="shell">
+  <aside class="rail" aria-hidden="true">
+    <span class="perf"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+    <span class="mark">KIZAME / 刻</span>
+    <span class="dot"></span>
+  </aside>
+
+  <div class="content doc">
+    <header class="topbar">
+      <a class="brand" href="index.html">刻 <small>KIZAME</small></a>
+      <nav class="nav" aria-label="主导航">
+        <a href="index.html">首页</a>
+        <a href="terms.html">用户协议</a>
+        <a href="https://github.com/mintj572/kizame-releases">发布仓库 ↗</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section style="border-top:none;padding-top:34px">
+        <span class="kicker">生效日期 2026-11-08 · 适用于 v0.1.0</span>
+        <h2>隐私政策</h2>
+        <p class="lede">一句话版本：Kizame 没有账号，也没有我们自己的服务器。你的配方、照片和相机信息只待在手机里；唯一的例外是你主动点击「检查更新」时读取一次公开的版本号。</p>
+        <p>本政策由 <span class="fill">MintJ</span>（以下简称「我们」）就 Kizame（中文名「刻」）说明数据的收集与使用。如有疑问，请联系 <a class="fill" href="mailto:kizamecontact@163.com">kizamecontact@163.com</a>，或在<a href="https://github.com/mintj572/kizame-releases/issues">发布仓库</a>提出。</p>
+      </section>
+
+      <section>
+        <span class="sec-no">§ 01</span>
+        <h2>我们不收集什么</h2>
+        <ul>
+          <li><strong>不设账号体系</strong>：无需注册、登录，不收集姓名、手机号、邮箱、设备标识符用于身份识别。</li>
+          <li><strong>不上传照片</strong>：从相机传输的照片只保存在你手机本地或你指定的位置。</li>
+          <li><strong>不上传配方与机身数据</strong>：配方、抓取的机身配置备份、连接日志均只存本机。</li>
+          <li><strong>不接入第三方 SDK</strong>：当前版本未集成广告、统计、推送、崩溃上报或用户画像类 SDK。应用依赖仅为 AndroidX 系统组件。</li>
+          <li><strong>唯一的公网请求是版本检查</strong>：仅在你主动点击「我的 → 检查更新」时，应用向公开发布页（GitHub Releases API）发起一次匿名 GET 请求比对版本号。请求不携带账号、配方、照片、机身数据、设备标识符或位置信息；请求头含应用版本号，网络地址与访问日志由 GitHub 按其自身政策处理。除此之外不访问公网服务。</li>
+          <li><strong>不与第三方共享数据</strong>：我们不会把你的配方、照片或相机数据上传或提供给任何第三方。</li>
+        </ul>
+        <p class="notice">若后续版本引入崩溃收集等能力，我们会先更新本政策并在应用内明确告知；当前版本以本节描述为准。</p>
+      </section>
+
+      <section>
+        <span class="sec-no">§ 02</span>
+        <h2>本机存储的数据</h2>
+        <table>
+          <tbody>
+            <tr><th>配方与配方封面</th><td>你自己创建、编辑或导入的配方，随版本附带的 4 支示例参数预设，以及分享卡图片。仅存应用私有目录。<strong>示例预设不含任何图片文件</strong>，界面以纯色块占位。</td></tr>
+            <tr><th>机身配置基线</th><td>推送前从相机读取的配置备份，用作写入基线与恢复依据。</td></tr>
+            <tr><th>照片</th><td>你主动从相机传输的照片，保存到系统相册或你选择的位置。</td></tr>
+            <tr><th>连接日志 / 配对信息</th><td>蓝牙配对信息、相机 SSID 与连接诊断日志，用于自动重连和排查问题。</td></tr>
+          </tbody>
+        </table>
+        <p style="margin-top:20px">这些数据不经过我们的服务器。卸载应用会一并删除应用私有目录下的数据；照片若已写入系统相册，需自行在相册中删除。应用声明了系统备份（<span class="mono">allowBackup</span>），若你开启了系统云备份，本机数据可能随系统备份被保存，可在系统设置中关闭或清除。</p>
+      </section>
+
+      <section>
+        <span class="sec-no">§ 03</span>
+        <h2>权限清单与用途</h2>
+        <p>应用需要连接相机蓝牙与相机自发的 Wi-Fi 热点，因此会使用以下系统权限。凡涉及位置的能力，均已按 Android 新版本的最小化要求处理。</p>
+        <table>
+          <tbody>
+            <tr><th>INTERNET<br>ACCESS_NETWORK_STATE</th><td>与相机建立局域网 PTP 会话（遥控拍摄 / 照片传输）、判断当前网络状态。<span class="mono">除你主动点击「检查更新」时访问公开发布页读取版本号外，不访问其它公网服务。</span></td></tr>
+            <tr><th>CHANGE_NETWORK_STATE<br>ACCESS_WIFI_STATE<br>CHANGE_WIFI_STATE</th><td>通过系统「网络建议」按需接入或断开相机热点，避免反复弹框授权。</td></tr>
+            <tr><th>NEARBY_WIFI_DEVICES</th><td><span class="mono">Android 13+，标记 neverForLocation</span>。发现并连接附近的相机 Wi-Fi，不用于获取位置信息。</td></tr>
+            <tr><th>ACCESS_FINE_LOCATION</th><td><span class="mono">仅 Android 12L（API 32）及以下申请</span>。旧版系统强制要求扫描蓝牙 / Wi-Fi 设备必须持有定位权限。<strong>应用不会读取、记录或上传你的位置。</strong>拒绝授权时，连接引导会降级到其它方式，不影响配方功能。</td></tr>
+            <tr><th>BLUETOOTH_SCAN</th><td><span class="mono">Android 12+，标记 neverForLocation</span>。扫描相机蓝牙广播以完成自动连接。</td></tr>
+            <tr><th>BLUETOOTH_CONNECT</th><td><span class="mono">Android 12+</span>。连接已配对的相机并读写配方数据。</td></tr>
+            <tr><th>BLUETOOTH<br>BLUETOOTH_ADMIN</th><td><span class="mono">仅 Android 11 及以下</span>。旧版系统上的蓝牙配对与连接。</td></tr>
+            <tr><th>WRITE_EXTERNAL_STORAGE</th><td><span class="mono">仅 Android 9 及以下</span>。把相机照片保存到系统相册。Android 10 起改用 MediaStore，不再申请任何存储权限。</td></tr>
+          </tbody>
+        </table>
+        <p style="margin-top:20px">你可以在系统设置中随时撤回权限。撤回定位或附近设备权限后，蓝牙自动发现与热点接入可能不可用，但已保存在本机的配方仍可查看与编辑。</p>
+      </section>
+
+      <section>
+        <span class="sec-no">§ 04</span>
+        <h2>文件分享</h2>
+        <p>导出配方分享卡时使用系统分享面板，通过 Android FileProvider 向你自己选择的目标应用临时授予单个文件的读取权限。该组件不对外部应用导出，我们无法得知你分享给了谁，也不保留分享记录。分享卡会嵌入你为该配方选择的封面图（示例预设不带封面），导入端可将该图片另存为本机文件；请确保你有权使用所选图片。</p>
+      </section>
+
+      <section>
+        <span class="sec-no">§ 05</span>
+        <h2>儿童与适用范围</h2>
+        <p>本应用面向相机使用者，不面向未满 14 周岁的儿童，也不会主动收集儿童个人信息。</p>
+      </section>
+
+      <section>
+        <span class="sec-no">§ 06</span>
+        <h2>政策更新与联系</h2>
+        <p>功能变化时本政策会同步更新，生效日期在页首标注，历史版本可在发布仓库查阅。关于隐私的问题请通过 <a class="fill" href="mailto:kizamecontact@163.com">kizamecontact@163.com</a> 或<a href="https://github.com/mintj572/kizame-releases/issues">发布仓库 Issues</a> 联系 <span class="fill">MintJ</span>。</p>
+        <p class="small muted">Kizame 为第三方独立开发的应用，与 FUJIFILM 公司无隶属、合作或授权关系。</p>
+      </section>
+    </main>
+
+    <footer>
+      <span>© 2026 Kizame / 刻 · 第三方开发，非官方应用</span>
+      <nav aria-label="页脚导航">
+        <a href="index.html">首页</a>
+        <a href="terms.html">用户协议</a>
+        <a href="https://github.com/mintj572/kizame-releases">GitHub ↗</a>
+      </nav>
+    </footer>
+  </div>
+</div>
+</body>
+</html>
