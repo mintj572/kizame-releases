@@ -4,9 +4,10 @@
      一次性换成法定姓名（与软著著作权人、备案主体、商店开发者名称一字不差），
      并把 kizamecontact@163.com 换成长期有人维护的联系邮箱。
      仓库指向公开的发布仓库（只放官网与 APK Release），不是私有源码仓库。
-     本页为「含 App 截图」的第二版首页；替换时把本文件改名为 index.html 即可。
+     本文件即正式首页 site/index.html（由早前的 index-v2.html 转正而来，旧文件名已不再存在）。
      截图全部由 adb 从真机重新抓取，自带系统状态栏与手势条，页面只做圆角与细边框，
-     不叠加任何虚拟手机外壳或伪造状态栏。图片统一 PNG，无 webp 依赖。
+     不叠加任何虚拟手机外壳或伪造状态栏。发布用图为 site/img/*.webp（720×1533），
+     全分辨率原始截图保存在 shots/adb/*.png。
      含真实相机相册照片的 02-gallery.png / web/02-gallery.webp / contact-sheet.png
      已移出本目录至 shots/_private/，本页与 site/ 内不再有任何引用；
      若以后要展示相册界面，请先换成不含私人照片的版本。 -->
@@ -398,7 +399,7 @@ footer a:hover{color:var(--oxide)}
       <!-- ========== HERO ========== -->
       <section class="hero" id="download" aria-labelledby="hero-title">
         <div class="hero__copy">
-          <span class="eyebrow">第三方工具 · ANDROID · v0.1.0</span>
+          <span class="eyebrow">第三方工具 · ANDROID · v0.1.3</span>
           <h1 id="hero-title">一键把配方<br>刻进机身</h1>
           <p class="lede">选好配方，点一下，相机里的胶片模拟、白平衡、高光阴影、颗粒与清晰度当场全变。16 个参数一次写进机身，写完就生效，关机重启还在。</p>
           <p class="muted small">不是手机滤镜，不是给照片套色。改的是相机本身的设置。</p>
@@ -606,7 +607,7 @@ footer a:hover{color:var(--oxide)}
             <tr><th>固件 / Root</th><td>不刷机、不改固件、不需要 Root；不想用了直接卸载就好</td></tr>
             <tr><th>数据安全</th><td>不收集账号，不上传照片，配方只存本机；无广告与第三方统计 SDK</td></tr>
             <tr><th>系统要求</th><td>Android 8.0 及以上；相机需支持蓝牙并完成过一次配对</td></tr>
-            <tr><th>当前版本</th><td><span class="mono">0.1.0</span></td></tr>
+            <tr><th>当前版本</th><td><span class="mono">0.1.3</span></td></tr>
           </tbody>
         </table>
 
@@ -653,7 +654,7 @@ footer a:hover{color:var(--oxide)}
       <!-- ========== 下载板 ========== -->
       <section class="sec sec--tight">
         <div class="plate reveal">
-          <span class="mono">OPEN BETA / v0.1.0</span>
+          <span class="mono">OPEN BETA / v0.1.3</span>
           <h2>先给把它真正用起来的人。</h2>
           <p>产品仍在逐页打磨，机型支持也在扩展。这一版适合愿意反馈问题的富士用户——遇到连不上、参数没生效、机型不认，到发布仓库提一个 issue，比一条差评有用得多。</p>
           <div class="actions">
