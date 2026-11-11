@@ -15,9 +15,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>刻 Kizame — 一键把配方刻进机身</title>
-<meta name="description" content="Kizame 通过蓝牙把一整套配方直接写进富士相机机身。16 个参数一次下发，不翻菜单，关机不丢。第三方开发，非官方应用。">
+<title>刻 Kizame — 富士相机胶片模拟配方工具，APK 下载</title>
+<meta name="description" content="刻 Kizame 是一款给富士相机用的第三方 Android 工具：通过蓝牙把胶片模拟、白平衡、颗粒等 16 项配方设置一次写进相机机身，关机重启仍在。无需账号、不上传数据，官网提供 APK 下载与校验值。非官方应用。">
+<link rel="canonical" href="https://mintj572.github.io/kizame-releases/">
+<meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#F3F1EC">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="刻 Kizame">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="刻 Kizame — 一键把配方刻进富士机身">
+<meta property="og:description" content="16 项胶片模拟配方参数，蓝牙一次写进相机机身。无需账号、不上传数据，APK 官网直下。">
+<meta property="og:url" content="https://mintj572.github.io/kizame-releases/">
+<meta property="og:image" content="https://mintj572.github.io/kizame-releases/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="刻 Kizame 官网：一键把配方刻进富士相机机身">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="刻 Kizame — 一键把配方刻进富士机身">
+<meta name="twitter:description" content="16 项胶片模拟配方参数，蓝牙一次写进相机机身。">
+<meta name="twitter:image" content="https://mintj572.github.io/kizame-releases/img/og.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%23232830'/%3E%3Ctext x='24' y='34' font-size='29' font-family='Georgia' text-anchor='middle' fill='%23CDD4DE'%3EK%3C/text%3E%3C/svg%3E">
 <script>if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.className+=' js';}</script>
 <style>
@@ -98,6 +114,8 @@ h3{font:500 18px/1.5 var(--sans);margin:0 0 6px}
 .muted{color:var(--muted)}
 .small{font-size:13.5px}
 .mono{font:400 12px/1.6 var(--mono);letter-spacing:.05em}
+.hash{font:400 12px/1.7 var(--mono);letter-spacing:.02em;word-break:break-all;overflow-wrap:anywhere;color:#3B3D3E}
+.section-link{color:var(--oxide);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
 .rule{height:1px;background:var(--line);margin:32px 0}
 .sec-head{max-width:36em;margin-bottom:36px}
 .sec-head p{color:var(--muted);font-size:15px;margin:0}
@@ -407,11 +425,11 @@ footer a:hover{color:var(--oxide)}
             <a class="btn" href="https://github.com/mintj572/kizame-releases/releases/latest/download/Kizame.apk">下载 APK <span class="arw">↓</span></a>
             <a class="btn-quiet" href="https://github.com/mintj572/kizame-releases/releases">全部版本与更新日志</a>
           </div>
-          <p class="meta-line">ANDROID 8.0+ · 当前仅 X-T4 真机验证 · SHA-256 校验值见 Release 页</p>
+          <p class="meta-line">ANDROID 8.0+ · 已在 X-T4 完成真机验证 · SHA-256 校验值见 Release 页</p>
         </div>
 
         <div class="stage">
-          <span class="stage__tag">X-T4 / 真机界面</span>
+          <span class="stage__tag">真机界面 / 富士机身</span>
           <div class="reel" id="reel" role="group" aria-roledescription="轮播" aria-label="App 界面，自动轮换，可点下方短线切换">
             <div class="reel__slide is-active">
               <img class="shot" src="img/04-recipe-detail.webp" alt="配方详情页：列出胶片模拟、动态范围、高光阴影、色彩、锐度等参数，底部是琥珀色的「一键推送到相机」按钮" width="720" height="1600" fetchpriority="high">
@@ -552,7 +570,7 @@ footer a:hover{color:var(--oxide)}
       <section class="sec sec--base" aria-labelledby="shoot-title">
         <div class="shoot">
           <div class="deep__media reveal">
-            <img class="shot" src="img/01-home.webp" alt="首页相机卡：显示 FUJIFILM X-T4 已连接，下面有相册与蓝牙快门两个入口" width="720" height="1600" loading="lazy">
+            <img class="shot" src="img/01-home.webp" alt="首页相机卡：显示相机已连接，下面有相册与蓝牙快门两个入口" width="720" height="1600" loading="lazy">
           </div>
           <div class="reveal">
             <span class="eyebrow">拍摄与相册</span>
@@ -611,14 +629,15 @@ footer a:hover{color:var(--oxide)}
           </tbody>
         </table>
 
-        <h3 class="subhead" id="models">机型支持</h3>
+        <h3 class="subhead" id="models">机型验证进度</h3>
+        <p class="small muted" style="margin:0 0 18px">面向富士机身设计，不针对单一型号；下表是目前实际验证过的情况。</p>
         <table class="spec reveal">
           <tbody>
-            <tr><th>X-T4</th><td>已真机验证：蓝牙连接、配方推送与抓取、遥控拍摄、照片传输全流程</td></tr>
-            <tr><th>X-T5 / X100V / GFX 等</th><td class="muted">适配中，尚未完成真机验证，暂不承诺可用</td></tr>
+            <tr><th>X-T4</th><td>已完成真机验证：蓝牙连接、配方推送与抓取、遥控拍摄、照片传输全流程</td></tr>
+            <tr><th>其它富士机身</th><td class="muted">尚未逐一实测，验证范围会逐步扩展；不同机型的参数档位可能有差异</td></tr>
           </tbody>
         </table>
-        <p class="small muted" style="margin-top:18px">机型不在上面？到发布仓库提一下机型与固件版本，这会直接决定下一款先适配谁。</p>
+        <p class="small muted" style="margin-top:18px">还没测到你的机型？到发布仓库提一下机型与固件版本，这会直接决定下一款先验证谁。</p>
       </section>
 
       <!-- ========== FAQ ========== -->
@@ -646,9 +665,27 @@ footer a:hover{color:var(--oxide)}
           </details>
           <details>
             <summary>支持哪些机型？APK 怎么确认没被改过？</summary>
-            <p>目前只有 X-T4 完成真机验证，其它机型仍在适配，具体见上方机型清单；当前仅有 Android 版本。每个版本都发布在 GitHub Releases，附更新日志与 SHA-256 校验值，安装前可自行核对；本项目不通过任何第三方下载站分发安装包。</p>
+            <p>应用面向富士机身，不针对单一型号；目前已在 X-T4 完成完整真机验证，其它机身还没逐一实测，具体见上方验证进度；当前仅有 Android 版本。每个版本都发布在 GitHub Releases，附更新日志与 SHA-256 校验值，安装前可自行核对；本项目不通过任何第三方下载站分发安装包。</p>
           </details>
         </div>
+      </section>
+
+      <!-- ========== 下载前核对 ========== -->
+      <section class="sec sec--tight" id="verify" aria-labelledby="verify-title">
+        <div class="sec-head reveal">
+          <span class="eyebrow">下载前 — 可以自己核对</span>
+          <h2 id="verify-title">下载的包，可以自己验一遍</h2>
+        </div>
+        <table class="spec reveal">
+          <tbody>
+            <tr><th>当前版本</th><td>v0.1.5</td></tr>
+            <tr><th>安装包校验值</th><td><span class="hash">86dcf876125523800bf74aed1d758e0b32b340c5129deefe5bd32b194359472f</span></td></tr>
+            <tr><th>签名证书指纹</th><td><span class="hash">37:C8:3A:E1:EC:C6:CD:52:96:34:CB:52:83:6C:59:C5:92:36:8A:84:EE:0D:39:C2:97:DB:1D:26:49:F5:3B:FA</span></td></tr>
+          </tbody>
+        </table>
+        <div class="rule"></div>
+        <p class="notice"><strong>怎么核对：</strong>这串安装包校验值同时印在<a class="section-link" href="https://github.com/mintj572/kizame-releases/releases">每个版本的发布页</a>上，两处一致，就说明你拿到的是我们发出的同一个安装包。签名证书指纹每个版本都一样；万一哪天换了签名，Android 会直接拒绝覆盖安装，所以这串也能帮你确认来源一直没变。</p>
+        <p class="small muted" style="margin-top:14px">出新版本时，下载新的 Kizame.apk 覆盖安装就好，本机配方与传输记录都会保留。每个版本改了什么、对应的校验值，都在<a class="section-link" href="https://github.com/mintj572/kizame-releases/releases">版本记录</a>里。</p>
       </section>
 
       <!-- ========== 下载板 ========== -->
