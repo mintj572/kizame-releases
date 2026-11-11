@@ -1,10 +1,14 @@
 # Kizame（刻）
 
-把配方刻进机身。一个不需要账号、不依赖云端的富士相机工具。
+把配方刻进机身。刻 Kizame 是一款给富士相机用的第三方 Android 工具：通过蓝牙把胶片模拟、白平衡、颗粒等 16 项配方设置一次写进相机机身，关机重启仍在。不需要账号、不依赖云端，官网直接提供 APK 下载。
 
 这个仓库只放**安装包与官网**（GitHub Pages 从这里发布）。App 源码不在此仓库。
 
-**[下载最新版](https://github.com/mintj572/kizame-releases/releases/latest/download/Kizame.apk)** · [官网](https://mintj572.github.io/kizame-releases/) · [更新日志](https://github.com/mintj572/kizame-releases/releases)
+**[下载最新版 Kizame.apk](https://github.com/mintj572/kizame-releases/releases/latest/download/Kizame.apk)** · [官网](https://mintj572.github.io/kizame-releases/) · [更新日志](https://github.com/mintj572/kizame-releases/releases)
+
+- 官网：https://mintj572.github.io/kizame-releases/
+- APK 下载（始终指向最新版）：https://github.com/mintj572/kizame-releases/releases/latest/download/Kizame.apk
+- 版本记录与 SHA-256 校验值：https://github.com/mintj572/kizame-releases/releases
 
 ---
 
@@ -24,7 +28,7 @@
 3. 首次打开先看说明页，同意后才开始扫描蓝牙
 
 **系统要求**：Android 8.0 及以上，蓝牙 4.0。
-**实测机型**：Fujifilm X-T4（固件 2.12）。其它 X / GFX 机型未验证。
+**已验证机型**：Fujifilm X-T4（固件 2.12）。其它富士机身尚未逐一实测。
 
 ## 隐私
 
@@ -42,7 +46,7 @@
 
 ## 说明
 
-非官方应用，与 FUJIFILM 无隶属或合作关系。FUJIFILM、X-T4 等名称与标识是富士胶片株式会社的商标，此处仅用于说明兼容性。
+非官方应用，与 FUJIFILM 无隶属或合作关系。FUJIFILM 及文中出现的机型名称与标识是富士胶片株式会社的商标，此处仅用于说明兼容性与验证情况。
 
 应用内标记为「示例」的 4 支预设由本项目独立编写，未经实拍调校、不代表推荐。
 
