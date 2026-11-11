@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mintj572.github.io/kizame-releases/sitemap.xml
